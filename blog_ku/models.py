@@ -15,6 +15,7 @@ class Admin(db.Model, UserMixin):
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(20),nullable=False)
 	password = db.Column(db.String(60), nullable=False)
+	# admin_id = db.Column(db.Integer, db.ForeignKey('admin.id'), nullable=False)
 
 
 class User(db.Model, UserMixin):
@@ -26,7 +27,7 @@ class User(db.Model, UserMixin):
 	posts = db.relationship('Post', backref='penulis', lazy=True)
 
 	def __repr__(self):
-		return f"User('{self.username}', '{self.email}', '{self.image_file}', '{self.password}')"
+		return f"User('{self.username}', '{self.email}', '{self.image_file}')"
 
 class Post(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
@@ -37,7 +38,6 @@ class Post(db.Model):
 
 	def __repr__(self):
 		return f"Post('{self.title}', '{self.tgl_post}', '{self.konten}')"
-
 
 class Matakuliah(db.Model):
 	id = db.Column(db.Integer, primary_key=True)

@@ -6,21 +6,21 @@ from blog_ku.forms import Registrasi_F, Login_F, Update_Account_F, Post_F, Admin
 import os
 import secrets
 from PIL import Image
-
 posts=[
-    {
-    'penulis':'KASMIL PAPALIA',
-    'title':"Blog Post 1",
-    'konten':'post pertama KASMIL PAPALIA',
-    'tgl_post':'oktober 10, 2019'
-    },
-    {
-    'penulis':'KASMIL',
-    'title':"Blog Post 2",
-    'konten':'post 2 akan di tampilkan di halaman berikutnya',
-    'tgl_post':'oktober 30, 2019'
-    },
-]
+	{
+	'penulis':'Irfiana Safitri',
+	'title':"Blog post 1",
+	'konten':'ini adalah tampilan post saya',
+	'tgl_post':'oktober 9, 2019'
+	},
+
+	{
+	'penulis':'Ariska Abd Kadir',
+	'title':"Blog post 2",
+	'konten':'ini adalah tampilan post saya',
+	'tgl_post':'oktober 8, 2019'
+	},
+	]
 
 @app.route("/")
 @app.route("/home")
@@ -154,12 +154,12 @@ def delete_post(post_id):
 	flash('post berhasil dihapus','success')
 	return redirect(url_for('home'))
 #belum fix admin
-@app.route("/login_admin", methods=['GET','POST'])
+@app.route("/adminku", methods=['GET','POST'])
 def wpadmin():
-    form = Admin_F()
-    if form.validate_on_submit():
-        if form.username.data == 'kasmil' and form.password.data == 'papalia':
-            return redirect('admin')
-        else :
-            flash('Login gagal..!, periksa username dan password','danger')
-    return render_template("login_admin.html", title="login_admin", form=form)
+	form = Admin_F()
+	if form.validate_on_submit():
+		if form.username.data == 'fitri' and form.password.data == 'fitriana':
+			return redirect('admin')
+		else :
+			flash('Login gagal..!, periksa username dan password','danger')
+	return render_template("adminku.html", title="adminku", form=form)

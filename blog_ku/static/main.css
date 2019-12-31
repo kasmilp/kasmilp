@@ -1,8 +1,7 @@
-
 body {
-	background: rgb(255, 250, 205);
+	background: #fafafa;
 	color: #333333;
-	margin-top: 5rem
+	margin-top: 5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -76,12 +75,6 @@ a.article-title:hover {
 	margin-bottom: 16px;
 }
 
-.account-headling {
+.account-heading {
 	font-size: 2.5rem;
 }
-
-
-
-
-
-
