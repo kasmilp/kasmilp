@@ -163,12 +163,12 @@ def delete_post(post_id):
 	flash('post berhasil dihapus','success')
 	return redirect(url_for('home'))
 #belum fix admin
-@app.route("/wp-admin", methods=['GET','POST'])
+@app.route("/login_admin", methods=['GET','POST'])
 def wpadmin():
-	form = Admin_F()
-	if form.validate_on_submit():
-		if form.username.data == 'ikbal' and form.password.data == 'ikbal123':
-			return redirect('admin')
-		else :
-			flash('Login gagal..!, periksa username dan password','danger')
-	return render_template("wpadmin.html", title="Wpadmin", form=form)
+    form = Admin_F()
+    if form.validate_on_submit():
+        if form.username.data == 'kasmil' and form.password.data == 'papalia':
+            return redirect('admin')
+        else :
+            flash('Login gagal..!, periksa username dan password','danger')
+    return render_template("login_admin.html", title="login_admin", form=form)
