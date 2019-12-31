@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-	{% if title %}
-	<title>Blogku -{{ title }}</title>
-	{% else %}
-	<title>Blogku</title>
-	{% endif %}
-</head>
-
-<body>
 	{% extends "layout.html" %}
 
 	{%block content%}
@@ -26,6 +15,3 @@
 	</article>
 	{% endfor%}
 	{% endblock content %}
-</body>
-
-</html>
