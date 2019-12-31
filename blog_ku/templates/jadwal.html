@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="content-section">
+	<legend class="border-bottom mb-3" ><h3>DAFTAR</h3></legend>
+	<ul>
+
+	<fieldset>
+	<h2>Data Dosen</h2>
+		<table class="table">
+			<thead class="bg-blue bg-success">
+				<tr>
+					<th scope="col">Nama</th>
+					<th scope="col">Nidn</th>
+					<th scope="col">No Telpon</th>
+					<th scope="col">Alamat</th>
+				</tr>
+			</thead>
+			{% for dsn in dsen %}
+			<tbody>
+				<tr>
+					<td>{{ dsn.nama }}</td>
+					<td>{{ dsn.nidn }}</td>
+					<td>{{ dsn.no_telpon }}</td>
+					<td>{{ dsn.alamat }}</td>
+				</tr>
+			</tbody>
+			{% endfor %}
+		</table>
+
+	</fieldset>
+	<br><br><br><br><br>
+
+
+	<fieldset>
+	<h2>Matakuliah</h2>
+		<table class="table">
+			<thead class="bg-blue bg-success">
+				<tr>
+					<th scope="col">Matakuliah</th>
+					<th scope="col">Sks</th>
+					<th scope="col">Keterangan</th>
+				</tr>
+			</thead>
+			{% for mk in matkul %}
+			<tbody>
+				<tr>
+					<td scope="col">{{ mk.matakuliah }}</td>
+					<td scope="col">{{ mk.sks}}</td>
+					<td scope="col">{{ mk.keterangan }}</td>
+				</tr>
+			</tbody>
+			{% endfor %}
+		</table>
+	</fieldset>
+	<br><br><br><br><br>
+	<fieldset>
+	<h2>Jadwal</h2>
+		<table class="table">
+			<thead class="bg-blue bg-success">
+				<tr>
+					<th scope="col">Hari</th>
+					<th scope="col">Jam</th>
+					<th scope="col">Dosen</th>
+					<th scope="col">Matakuliah</th>
+				</tr>
+			</thead>
+			{% for jdwl in jdwal %}
+			<tbody>
+				<tr>
+					<td scope="col">{{ jdwl.hari }}</td>
+					<td scope="col">{{ jdwl.jam}}</td>
+					<td scope="col">{{ jdwl.Dosen.nama}}</td>
+					<td scope="col">{{ jdwl.Matakuliah.matakuliah}}</td>
+				</tr>
+			</tbody>
+			{% endfor %}
+		</table>
+	</fieldset>
+
+</div>
+
+
+{% endblock content %}
